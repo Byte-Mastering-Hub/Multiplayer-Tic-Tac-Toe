@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+
+:root {
+  --bg-main: radial-gradient(circle at top, #0f172a, #020617);
+  --panel-bg: rgba(10, 10, 20, 0.88);
+  --border-glow: rgba(0, 245, 255, 0.4);
+  --text-main: #e5e7eb;
+
+  --neon-pink: #ff2a6d;
+  --neon-blue: #00f5ff;
+  --neon-green: #00ff9c;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+/* MAIN CONTAINER */
+.game-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--panel-bg);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid var(--border-glow);
+  box-shadow:
+    0 0 35px rgba(0,245,255,0.15),
+    0 0 90px rgba(255,42,109,0.12);
+  text-align: center;
+}
+
+/* TITLE */
+.game-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* HIDE */
+.hidden {
+  display: none !important;
+}
+
+/* LOBBY */
+.lobby__description {
+  opacity: 0.75;
+  margin-bottom: 1.2rem;
+}
+
+/* 🔥 FIXED INPUT (GTA STYLE) */
+.game-input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.game-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.game-input:hover {
+  border-color: rgba(0, 245, 255, 0.5);
+}
+
+.game-input:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow:
+    0 0 0 2px rgba(0,245,255,0.25),
+    0 0 20px rgba(0,245,255,0.6);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* JOIN ROW */
+.join-game-wrapper {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+/* BUTTONS */
+.btn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+  color: #000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px var(--neon-pink);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* USER ID */
+.user-id-display {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.user-id-display__text {
+  font-family: monospace;
+  color: var(--neon-green);
+}
+
+/* INFO PANEL */
+.game-info-panel {
+  margin-bottom: 1rem;
+}
+
+.game-info-panel__id {
+  font-family: monospace;
+  color: var(--neon-green);
+}
+
+.game-info-panel__status {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+/* GAME BOARD */
+.game-board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 1.5rem;
+}
+
+/* CELLS */
+.cell {
+  aspect-ratio: 1 / 1;
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cell:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(255,255,255,0.18);
+}
+
+.cell.x {
+  color: var(--neon-blue);
+  text-shadow: 0 0 18px var(--neon-blue);
+}
+
+.cell.o {
+  color: var(--neon-pink);
+  text-shadow: 0 0 18px var(--neon-pink);
+}
+
+/* RESET BUTTON */
+.btn--reset {
+  margin-top: 1.5rem;
+}

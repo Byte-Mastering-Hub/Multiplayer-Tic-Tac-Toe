@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Tic-Tac-Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <div class="game-container">
+        <h1 class="game-title">Tic-Tac-Toe</h1>
+
+        <div id="lobby-section" class="lobby">
+            <p class="lobby__description">Create a new game or join with an ID.</p>
+            <button id="create-game-btn" class="btn btn--create">Create New Game</button>
+            
+            <div class="join-game-wrapper">
+                <input type="text" id="game-id-input" class="game-input" placeholder="Enter Game ID" />
+                <button id="join-game-btn" class="btn btn--join">Join</button>
+            </div>
+
+            <div class="user-id-display">
+                <p>Your User ID:</p>
+                <p id="user-id-text" class="user-id-display__text">Loading...</p>
+            </div>
+        </div>
+
+        <div id="game-board-container" class="game-board-container hidden">
+            <div id="game-info-panel" class="game-info-panel">
+                <p>Game ID: <strong id="game-id-display" class="game-info-panel__id"></strong></p>
+                <p id="status-text" class="game-info-panel__status">Loading game...</p>
+            </div>
+
+            <div id="game-board" class="game-board-grid">
+                </div>
+
+            <button id="reset-game-btn" class="btn btn--reset hidden">Play Again</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
